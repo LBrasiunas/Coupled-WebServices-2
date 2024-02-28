@@ -1,0 +1,6 @@
+@CoupledServicesApi_HostAddress = http://localhost:5126
+
+GET {{CoupledServicesApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
