@@ -4,8 +4,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.8.34525.116
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CarServiceWebService", "CarServiceWebService", "{F1B84238-4D95-49C2-BA30-350A7EE3578D}"
+	ProjectSection(SolutionItems) = preProject
+		CarService-WebService\Dockerfile = CarService-WebService\Dockerfile
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LibraryWebService", "LibraryWebService", "{4AED5310-1D75-414E-9E58-FB950418BC0A}"
+	ProjectSection(SolutionItems) = preProject
+		LibraryWebService\Dockerfile = LibraryWebService\Dockerfile
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application", "CarService-WebService\Application\Application.csproj", "{A559C4EA-DEDF-4F98-A98C-DDCDC70B8DE6}"
 EndProject
@@ -16,6 +22,14 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "LibraryWebService\Infrastructure\Infrastructure.csproj", "{B8305D0A-B4F1-41F7-AB5E-F3FD709E0AD9}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Library.API", "LibraryWebService\Library\Library.API.csproj", "{89AA4074-4627-4F14-9BBB-BFD9AC547FA8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{71808BF2-9544-4BBC-A2F9-9388C2D24EA4}"
+	ProjectSection(SolutionItems) = preProject
+		.dockerignore = .dockerignore
+		.gitignore = .gitignore
+		docker-compose.yml = docker-compose.yml
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
