@@ -16,7 +16,7 @@ namespace Library
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            var server = builder.Configuration["Server"] ?? "db";
+            var server = builder.Configuration["Server"] ?? "library-db";
             var port = builder.Configuration["Port"] ?? "1433";
             var database = builder.Configuration["Database"] ?? "Library";
 
