@@ -25,6 +25,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CoupledWebService", "CoupledWebService", "{E2A654E8-008C-426A-AD71-F4F293B0ABCB}"
+	ProjectSection(SolutionItems) = preProject
+		CoupledWebService\Dockerfile = CoupledWebService\Dockerfile
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoupledServicesApi", "CoupledWebService\CoupledServicesApi\CoupledServicesApi.csproj", "{C24C5546-CA12-4615-B915-C7A7A79DFB59}"
 EndProject

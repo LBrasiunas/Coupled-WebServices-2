@@ -4,3 +4,9 @@
 ## Web services used
 * My own: https://github.com/LBrasiunas/CarService-WebService-1
 * Other: https://github.com/VytenisKaj/LibraryWebService
+
+## Database migrations
+* Command for adding a migration: 
+`dotnet ef --startup-project CoupledWebService\CoupledServicesApi --project CoupledWebService\Infrastructure migrations add <migration_name>`
+* Command for updating database locally:
+`dotnet ef --startup-project CoupledWebService\CoupledServicesApi --project CoupledWebService\Infrastructure database update`
