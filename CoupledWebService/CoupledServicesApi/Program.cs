@@ -11,6 +11,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(connectionString);
 });
 builder.Services.AddRepositories();
+builder.Services.AddHttpClientsAndOptions(builder.Configuration);
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

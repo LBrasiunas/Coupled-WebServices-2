@@ -1,4 +1,4 @@
-﻿using Application.DTOs;
+﻿using Application.DTOs.ServiceEntry;
 using Infrastructure.Database.Models;
 
 namespace Infrastructure.Repositories;
