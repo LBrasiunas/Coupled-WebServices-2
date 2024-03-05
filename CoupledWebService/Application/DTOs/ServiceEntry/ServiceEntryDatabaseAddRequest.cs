@@ -1,6 +1,6 @@
 ﻿namespace Application.DTOs.ServiceEntry;
 
-public class ServiceEntryAddRequest
+public class ServiceEntryDatabaseAddRequest
 {
     public required int CarId { get; set; }
 

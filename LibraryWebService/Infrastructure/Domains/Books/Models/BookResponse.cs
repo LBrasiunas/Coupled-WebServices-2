@@ -6,6 +6,9 @@ namespace Infrastructure.Domains.Books.Models
     public class BookResponse
     {
         [Required]
+        public int Id { get; set; }
+
+        [Required]
         public string Title { get; set; }
 
         [Required]

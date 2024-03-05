@@ -1,6 +1,6 @@
 ﻿using Application.DTOs.Car;
 using Application.DTOs.Service;
-using Infrastructure.Interfaces;
+using Infrastructure.Interfaces.Adapters;
 using System.Net.Http.Json;
 using System.Text.Json;
 

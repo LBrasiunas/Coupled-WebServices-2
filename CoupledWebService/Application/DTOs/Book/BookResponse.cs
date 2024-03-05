@@ -10,7 +10,7 @@ public class BookResponse
     public required string Title { get; set; }
 
     [JsonPropertyName("author")]
-    public required AuthorCreateResponse ServiceAsAuthor { get; set; }
+    public required AuthorResponse ServiceAsAuthor { get; set; }
 
     public required string Description { get; set; }
 }

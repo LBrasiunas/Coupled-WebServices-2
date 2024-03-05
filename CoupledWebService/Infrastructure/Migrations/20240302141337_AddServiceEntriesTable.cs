@@ -27,6 +27,20 @@ namespace Infrastructure.Migrations
                 {
                     table.PrimaryKey("PK_ServiceEntries", x => x.Id);
                 });
+
+            // Add data to table
+            migrationBuilder.InsertData(
+                table: "ServiceEntries",
+                columns: new[] { "CarId", "ServiceId", "ServiceLeaflet", "InsertedOn" },
+                values: new object[] { 2, 1, 1, DateTime.UtcNow });
+            migrationBuilder.InsertData(
+                table: "ServiceEntries",
+                columns: new[] { "CarId", "ServiceId", "ServiceLeaflet", "InsertedOn" },
+                values: new object[] { 1, 3, 2, DateTime.UtcNow });
+            migrationBuilder.InsertData(
+                table: "ServiceEntries",
+                columns: new[] { "CarId", "ServiceId", "ServiceLeaflet", "InsertedOn" },
+                values: new object[] { 3, 3, 3, DateTime.UtcNow });
         }
 
         /// <inheritdoc />

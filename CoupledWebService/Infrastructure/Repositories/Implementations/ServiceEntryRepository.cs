@@ -16,7 +16,7 @@ public class ServiceEntryRepository : IServiceEntryRepository
         _table = _dbContext.Set<ServiceEntry>();
     }
 
-    public async Task<ServiceEntry> Add(ServiceEntryAddRequest entryRequest)
+    public async Task<ServiceEntry> Add(ServiceEntryDatabaseAddRequest entryRequest)
     {
         var serviceEntry = new ServiceEntry
         {
@@ -51,6 +51,11 @@ public class ServiceEntryRepository : IServiceEntryRepository
     public async Task<ServiceEntry?> GetById(int id)
     {
         return await _table.FindAsync(id);
+    }
+
+    public async Task<List<ServiceEntry>?> GetAllByCarId(int carId)
+    {
+        return await _table.Where(x => x.CarId == carId).ToListAsync();
     }
 
     public async Task<ServiceEntry?> Update(int id, ServiceEntryUpdateRequest entry)

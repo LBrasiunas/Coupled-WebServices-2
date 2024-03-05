@@ -97,12 +97,12 @@ namespace Infrastructure.Migrations
             migrationBuilder.InsertData(
                 table: "Services",
                 columns: new[] { "Name", "Description" },
-                values: new object[] { "Detailing", "Make your car look brand new" });
+                values: new object[] { "DetailingPros", "Make your car look brand new" });
 
             migrationBuilder.InsertData(
                 table: "Services",
                 columns: new[] { "Name", "Description" },
-                values: new object[] { "OilChange", null });
+                values: new object[] { "OilChangeMasters", null });
 
             // Add data to CarsAssignedToServices table
             migrationBuilder.InsertData(

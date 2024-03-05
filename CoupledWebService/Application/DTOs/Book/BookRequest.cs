@@ -1,12 +1,12 @@
 ﻿namespace Application.DTOs.Book;
 
-public class BookCreateRequest
+public class BookRequest
 {
     // Title of the service entry (service done to the car)
     public required string Title { get; set; }
 
-    // ServiceName+CarBrand+CarModel+CarYear
-    public required string Isbn { get; set; }
+    // Is not needed for this task
+    public string Isbn { get; set; } = "ISBN";
 
     // Is not needed for this task
     public DateTime CreatedDate { get; set; } = DateTime.Now;

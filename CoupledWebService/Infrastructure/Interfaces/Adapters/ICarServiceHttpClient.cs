@@ -1,7 +1,7 @@
 ﻿using Application.DTOs.Car;
 using Application.DTOs.Service;
 
-namespace Infrastructure.Interfaces;
+namespace Infrastructure.Interfaces.Adapters;
 
 public interface ICarServiceHttpClient
 {

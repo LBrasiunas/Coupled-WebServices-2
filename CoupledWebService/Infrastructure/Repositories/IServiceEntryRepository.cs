@@ -9,7 +9,9 @@ public interface IServiceEntryRepository
 
     Task<ServiceEntry?> GetById(int id);
 
-    Task<ServiceEntry> Add(ServiceEntryAddRequest entry);
+    Task<List<ServiceEntry>?> GetAllByCarId(int carId);
+
+    Task<ServiceEntry> Add(ServiceEntryDatabaseAddRequest entry);
 
     Task<ServiceEntry?> Update(int id, ServiceEntryUpdateRequest entry);
 
