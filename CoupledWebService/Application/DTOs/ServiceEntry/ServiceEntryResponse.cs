@@ -1,10 +1,18 @@
-﻿namespace Application.DTOs.ServiceEntry;
+﻿using Application.DTOs.Book;
+using Application.DTOs.Car;
+using Application.DTOs.Service;
+
+namespace Application.DTOs.ServiceEntry;
 
 public class ServiceEntryResponse
 {
-    public ServiceEntryPartialResponse? ServiceEntry { get; set; }
+    public required int Id { get; set; }
 
-    public ServiceEntryDatabaseResponse? ServiceEntryFromDatabase { get; set; }
+    public CarResponse? CarInfo { get; set; }
 
-    public string? Error { get; set; }
+    public ServiceResponse? ServiceInfo { get; set; }
+
+    public BookResponse? ServiceEntry { get; set; }
+
+    public DateTime InsertedOn { get; set; }
 }

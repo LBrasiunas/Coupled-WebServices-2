@@ -4,16 +4,20 @@ namespace Infrastructure.Interfaces.Services;
 
 public interface IServiceEntryService
 {
-    Task<ServiceEntryResponse> CreateNewServiceEntry(
-        ServiceEntryRequest entryRequest);
+    Task<ServiceEntryDatabaseResponse?> CreateNewServiceEntry(
+        ServiceEntryCreateRequest entryRequest);
 
-    Task<ServiceEntryResponse> GetServiceEntryById(int id);
+    Task<List<ServiceEntryResponse>?> GetAllServiceEntriesPaged(
+        int offset = 0,
+        int takeCount = 50);
 
-    Task<List<ServiceEntryResponse>> GetServiceEntriesByCarId(int carId);
+    Task<ServiceEntryResponse?> GetServiceEntryById(int id);
 
-    Task<ServiceEntryResponse> UpdateServiceEntry(
+    Task<List<ServiceEntryResponse>?> GetServiceEntriesByCarId(int carId);
+
+    Task<ServiceEntryDatabaseResponse?> UpdateServiceEntry(
         int id,
         ServiceEntryUpdateRequest entryRequest);
 
-    Task<ServiceEntryResponse> DeleteServiceEntryById(int id);
+    Task<ServiceEntryDatabaseResponse?> DeleteServiceEntryById(int id);
 }

@@ -5,7 +5,7 @@ namespace Infrastructure.Repositories;
 
 public interface IServiceEntryRepository
 {
-    Task<List<ServiceEntry>?> GetAllPaged(int offset, int takeCount);
+    Task<List<ServiceEntry>?> GetAllPaged(int offset = 0, int takeCount = 50);
 
     Task<ServiceEntry?> GetById(int id);
 

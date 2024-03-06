@@ -2,7 +2,7 @@
 
 namespace Application.DTOs.ServiceEntry;
 
-public class ServiceEntryRequest
+public class ServiceEntryCreateRequest
 {
     public required int CarId { get; set; }
 

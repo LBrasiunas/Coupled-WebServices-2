@@ -24,10 +24,42 @@ public class CarServiceHttpClient : ICarServiceHttpClient
         return await response.Content.ReadFromJsonAsync<ServiceResponse>(_jsonOptions);
     }
 
+    // Get all Services
+    public async Task<List<ServiceResponse>?> GetAllServices(int offset = 0, int takeCount = 50)
+    {
+        var response = await _httpClient.GetAsync($"api/services?offset={offset}&takeCount={takeCount}");
+        response.EnsureSuccessStatusCode();
+        return await response.Content.ReadFromJsonAsync<List<ServiceResponse>>(_jsonOptions);
+    }
+
+    // Create Service
+    public async Task<ServiceResponse?> CreateService(ServiceRequest serviceRequest)
+    {
+        var response = await _httpClient.PostAsJsonAsync("api/services", serviceRequest);
+        response.EnsureSuccessStatusCode();
+        return await response.Content.ReadFromJsonAsync<ServiceResponse>(_jsonOptions);
+    }
+
     // Get Car by id
     public async Task<CarResponse?> GetCarById(int id)
     {
         var response = await _httpClient.GetAsync($"api/cars/{id}");
+        response.EnsureSuccessStatusCode();
+        return await response.Content.ReadFromJsonAsync<CarResponse>(_jsonOptions);
+    }
+
+    // Get all Services
+    public async Task<List<CarResponse>?> GetAllCars(int offset = 0, int takeCount = 50)
+    {
+        var response = await _httpClient.GetAsync($"api/cars?offset={offset}&takeCount={takeCount}");
+        response.EnsureSuccessStatusCode();
+        return await response.Content.ReadFromJsonAsync<List<CarResponse>>(_jsonOptions);
+    }
+
+    // Create Car
+    public async Task<CarResponse?> CreateCar(CarRequest carRequest)
+    {
+        var response = await _httpClient.PostAsJsonAsync("api/cars", carRequest);
         response.EnsureSuccessStatusCode();
         return await response.Content.ReadFromJsonAsync<CarResponse>(_jsonOptions);
     }

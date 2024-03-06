@@ -23,7 +23,7 @@ public class ServiceEntryRepository : IServiceEntryRepository
             Id = 0,
             CarId = entryRequest.CarId,
             ServiceId = entryRequest.ServiceId,
-            ServiceLeaflet = entryRequest.ServiceLeaflet,
+            ServiceEntryId = entryRequest.ServiceEntryId,
         };
         var dbResult = await _table.AddAsync(serviceEntry);
         await _dbContext.SaveChangesAsync();
@@ -43,7 +43,7 @@ public class ServiceEntryRepository : IServiceEntryRepository
         return dbEntry;
     }
 
-    public async Task<List<ServiceEntry>?> GetAllPaged(int offset, int takeCount)
+    public async Task<List<ServiceEntry>?> GetAllPaged(int offset = 0, int takeCount = 50)
     {
         return await _table.Skip(offset).Take(takeCount).ToListAsync();
     }
@@ -72,7 +72,7 @@ public class ServiceEntryRepository : IServiceEntryRepository
             Id = id,
             CarId = entry.CarId ?? dbEntry.CarId,
             ServiceId = entry.ServiceId ?? dbEntry.ServiceId,
-            ServiceLeaflet = entry.ServiceLeaflet ?? dbEntry.ServiceLeaflet,
+            ServiceEntryId = entry.ServiceEntryId ?? dbEntry.ServiceEntryId,
         };
         var dbResult = _table.Update(serviceEntryUpdate);
         await _dbContext.SaveChangesAsync();

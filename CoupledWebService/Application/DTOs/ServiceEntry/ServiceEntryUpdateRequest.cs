@@ -6,5 +6,5 @@ public class ServiceEntryUpdateRequest
 
     public int? ServiceId { get; set; }
 
-    public int? ServiceLeaflet { get; set; } // Same as book
+    public int? ServiceEntryId { get; set; } // Same as book
 }
