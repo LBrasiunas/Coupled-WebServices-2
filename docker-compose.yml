@@ -1,4 +1,4 @@
-version: '3.4'
+version: '3.8'
 services:
   library-db:
     image: mcr.microsoft.com/mssql/server:2019-latest
@@ -12,6 +12,8 @@ services:
       test: /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P "$$SA_PASSWORD" -Q "SELECT 1" || exit 1
       interval: 5s
       retries: 5
+    networks:
+      - service-network
   postgres-db:
     image: postgres:latest
     restart: on-failure
@@ -25,6 +27,8 @@ services:
       test: ["CMD-SHELL", "pg_isready -U postgres"]
       interval: 5s
       retries: 5
+    networks:
+      - service-network
   library-api:
     image: ${DOCKER_REGISTRY-}library-api
     build:
@@ -36,7 +40,7 @@ services:
       library-db:
         condition: service_healthy
     networks:
-      - default
+      - service-network
   carservice-api:
     image: ${DOCKER_REGISTRY-}carservice-api
     build:
@@ -51,7 +55,7 @@ services:
       postgres-db:
         condition: service_healthy
     networks:
-      - default
+      - service-network
   coupledservices-api:
     image: ${DOCKER_REGISTRY-}coupledservices-api
     build:
@@ -66,4 +70,7 @@ services:
       postgres-db:
         condition: service_healthy
     networks:
-      - default
+      - service-network
+networks:
+  service-network:
+    name: main-services-network
