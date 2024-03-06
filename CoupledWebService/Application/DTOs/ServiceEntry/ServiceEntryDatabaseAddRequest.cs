@@ -6,5 +6,5 @@ public class ServiceEntryDatabaseAddRequest
 
     public required int ServiceId { get; set; }
 
-    public required int ServiceLeaflet { get; set; } // Same as book
+    public required int ServiceEntryId { get; set; } // Same as book
 }

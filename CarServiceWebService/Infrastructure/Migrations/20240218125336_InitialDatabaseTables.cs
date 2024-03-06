@@ -68,16 +68,6 @@ namespace Infrastructure.Migrations
                 columns: new[] { "Brand", "Model", "Year" },
                 values: new object[] { "Ford", "Fusion", 2019 });
 
-            migrationBuilder.InsertData(
-                table: "Cars",
-                columns: new[] { "Brand", "Model", "Year" },
-                values: new object[] { "Chevrolet", "Malibu", 2018 });
-
-            migrationBuilder.InsertData(
-                table: "Cars",
-                columns: new[] { "Brand", "Model", "Year" },
-                values: new object[] { "Tesla", "Model S", 2023 });
-
             // Add data to Services table
             migrationBuilder.InsertData(
                 table: "Services",
@@ -88,16 +78,6 @@ namespace Infrastructure.Migrations
                 table: "Services",
                 columns: new[] { "Name", "Description" },
                 values: new object[] { "QuickFix", "Fast and efficient car repairs" });
-
-            migrationBuilder.InsertData(
-                table: "Services",
-                columns: new[] { "Name", "Description" },
-                values: new object[] { "TuneUp", "Get your car running smoothly" });
-
-            migrationBuilder.InsertData(
-                table: "Services",
-                columns: new[] { "Name", "Description" },
-                values: new object[] { "DetailingPros", "Make your car look brand new" });
 
             migrationBuilder.InsertData(
                 table: "Services",
@@ -113,7 +93,7 @@ namespace Infrastructure.Migrations
             migrationBuilder.InsertData(
                 table: "CarsAssignedToServices",
                 columns: new[] { "ServiceId", "CarId" },
-                values: new object[] { 2, 4 });
+                values: new object[] { 2, 3 });
         }
 
         /// <inheritdoc />

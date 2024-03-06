@@ -8,7 +8,7 @@ public class ServiceEntryDatabaseResponse
 
     public required int ServiceId { get; set; }
 
-    public required int ServiceLeaflet { get; set; }
+    public required int ServiceEntryId { get; set; }
 
     public required DateTime InsertedOn { get; set; }
 }
