@@ -74,7 +74,7 @@ public class ServiceEntriesController : ControllerBase
     [HttpPost]
     [ProducesResponseType(StatusCodes.Status201Created)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<ActionResult<ServiceEntryDatabaseResponse>> Add(
+    public async Task<ActionResult<ServiceEntryResponse>> Add(
         [Required][FromBody] ServiceEntryCreateRequest serviceDto)
     {
         var dbResponse = await _serviceEntryService.CreateNewServiceEntry(serviceDto);
@@ -83,9 +83,10 @@ public class ServiceEntriesController : ControllerBase
             return BadRequest("Something failed when adding a new book in LibraryAPI.");
         }
 
+        var fullResponse = await _serviceEntryService.GetServiceEntryById(dbResponse.Id);
         return CreatedAtAction(nameof(GetEntryById),
             new { id = dbResponse.Id },
-            dbResponse);
+            fullResponse);
     }
 
     // This endpoint is used just for demonstration purposes and its contents should be added to a service
@@ -93,7 +94,7 @@ public class ServiceEntriesController : ControllerBase
     [HttpPost("extended")]
     [ProducesResponseType(StatusCodes.Status201Created)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<ActionResult<ServiceEntryDatabaseResponse>> AddExtended(
+    public async Task<ActionResult<ServiceEntryResponse>> AddExtended(
         [Required][FromBody] ServiceEntryExtendedCreateRequest serviceDto)
     {
         var carResponse = await _carServiceHttpClient.CreateCar(serviceDto.Car);
@@ -130,9 +131,10 @@ public class ServiceEntriesController : ControllerBase
             return BadRequest("Something failed when adding a new book in LibraryAPI.");
         }
 
+        var fullResponse = await _serviceEntryService.GetServiceEntryById(serviceEntryResponse.Id);
         return CreatedAtAction(nameof(GetEntryById),
             new { id = serviceEntryResponse.Id },
-            serviceEntryResponse);
+            fullResponse);
     }
 
     [HttpPut("{id}")]
